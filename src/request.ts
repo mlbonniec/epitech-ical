@@ -14,8 +14,8 @@ interface Params extends RouteGenericInterface {
 
 export async function request(request: FastifyRequest<Params>, reply: FastifyReply) {
   const { autologin } = request.params;
-  const start: string = getDateFormat(-21);
-  const end: string = getDateFormat(21);
+  const start: string = getDateFormat(-30);
+  const end: string = getDateFormat(30);
   const calendar = ical({ name: 'Epitech Calendar' });
   const { INTRA_BASE_URL } = process.env;
 
