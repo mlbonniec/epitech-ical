@@ -7,7 +7,7 @@
     "build": "npx tsc",
     "clean": "rm -rf ./dist",
     "dev": "tsnd -r dotenv/config --respawn src/app.ts",
-    "prod": "node ."
+    "prod": "node -r dotenv/config ."
   },
   "keywords": [
     "calendar",
