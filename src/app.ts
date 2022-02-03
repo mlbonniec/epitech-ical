@@ -13,5 +13,5 @@ app.register(AutoLoad, {
 
 app.listen(Number(process.env.PORT), '0.0.0.0', (err) => {
   if (err)
-    console.log("An error as occured.");
+    console.log("An error has occured.", err);
 });
