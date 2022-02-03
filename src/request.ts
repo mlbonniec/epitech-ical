@@ -13,14 +13,13 @@ interface Params extends RouteGenericInterface {
 }
 
 export async function request(request: FastifyRequest<Params>, reply: FastifyReply) {
-  const { autologin } = request.params;
   const start: string = getDateFormat(-30);
   const end: string = getDateFormat(30);
   const calendar = ical({ name: 'Epitech Calendar' });
   const { INTRA_BASE_URL } = process.env;
 
   try {
-    const { data }: AxiosResponse<APIEvent[]> = await axios.get(`${autologin}/planning/load`, {
+    const { data }: AxiosResponse<APIEvent[]> = await axios.get(`https://intra.epitech.eu/planning/load`, {
       baseURL: INTRA_BASE_URL,
       params: {
         format: 'json',
