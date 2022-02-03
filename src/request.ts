@@ -16,11 +16,10 @@ export async function request(request: FastifyRequest<Params>, reply: FastifyRep
   const start: string = getDateFormat(-30);
   const end: string = getDateFormat(30);
   const calendar = ical({ name: 'Epitech Calendar' });
-  const { INTRA_BASE_URL } = process.env;
 
   try {
-    const { data }: AxiosResponse<APIEvent[]> = await axios.get(`https://intra.epitech.eu/planning/load`, {
-      baseURL: INTRA_BASE_URL,
+    const { data }: AxiosResponse<APIEvent[]> = await axios.get(`${request.params.autologin}/planning/load`, {
+      baseURL: "https://intra.epitech.eu",
       params: {
         format: 'json',
         start,
@@ -33,7 +32,7 @@ export async function request(request: FastifyRequest<Params>, reply: FastifyRep
       calendar.createEvent({
         start: schedule.start,
         end: schedule.end,
-        url: e.acti_title ? `${INTRA_BASE_URL}/module/${e.scolaryear}/${e.codemodule}/${e.codeinstance}/${e.codeacti}/` : null,
+        url: e.acti_title ? `https://intra.epitech.eu/module/${e.scolaryear}/${e.codemodule}/${e.codeinstance}/${e.codeacti}/` : null,
         summary: e.acti_title || e.title,
         description: e.description || `${e.codemodule} » ${e.titlemodule}\nSemestre ${e.semester}`,
       });
