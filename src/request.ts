@@ -1,10 +1,10 @@
 import { APIEvent } from './types/event';
-import { getDateFormat } from './utils/date';
 import axios, { AxiosError, AxiosResponse } from 'axios';
+import { getDateFormat } from './utils/date';
 import { FastifyReply, FastifyRequest } from 'fastify';
-import ical from 'ical-generator';
 import { RouteGenericInterface } from 'fastify/types/route';
 import { getSchedule } from './utils/get-schedule';
+import ical from 'ical-generator';
 
 interface Params extends RouteGenericInterface {
   Params: {
