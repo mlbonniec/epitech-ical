@@ -21,7 +21,7 @@ export interface APIEvent {
     nb_hours: string;
     allowed_planning_start: string;
     allowed_planning_end: string;
-    nb_group: 1;
+    nb_group: number;
     nb_max_students_projet: null;
     room: {
         code: string;
@@ -36,8 +36,8 @@ export interface APIEvent {
     event_registered: boolean | "present" | "registered";
     display: string;
     project: boolean;
-    rdv_group_registered: string;
-    rdv_indiv_registered: string;
+    rdv_group_registered: string | null;
+    rdv_indiv_registered: string | null;
     allow_token: boolean;
     register_student: boolean;
     register_prof: boolean;
