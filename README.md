@@ -7,10 +7,13 @@ To get your informations, the server needs to authenticate to your intranet acco
 Obviously, nothing will be done except to get the information from the calendar, but I preferred to keep you informed.
 
 ## How to use ?
-Just go on your Epitech intranet. Section "Administration", then go on "Generate autologin link." (*It'll allow the server to get all your events informations.*)  
-Copy only the last part of the URL.  
-*example: `https://intra.epitech.eu/auth-29az35erty56ui22o` » `auth-29az35erty56ui22o`*  
-Now, you can add this part to the `http://intra.mathislebonniec.fr/events/[your-auth-link]`, and this will give you your intranet calendar!
+1) Clone the project
+2) Host it into your server.
+3) Go on your Epitech intranet.
+    * Section "Administration"
+    * Then go on "Generate autologin link." (*It'll allow the server to get all your events informations.*)
+    * Copy only the last part of the URL. *example: `https://intra.epitech.eu/auth-29az35erty56ui22o` » `auth-29az35erty56ui22o`*  
+4) Now, you can add this part to the `http://YOUR_IP_OR_DOMAIN/events/[your-auth-link]`, and this will give you your intranet calendar!
 
 ### Use the iCal
 * iOS Calendar
