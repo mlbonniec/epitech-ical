@@ -18,12 +18,15 @@ export async function request(request: FastifyRequest<Params>, reply: FastifyRep
   const calendar = ical({ name: 'Epitech Calendar' });
 
   try {
-    const { data }: AxiosResponse<APIEvent[]> = await axios.get(`${request.params.autologin}/planning/load`, {
+    const { data }: AxiosResponse<APIEvent[]> = await axios.get('/planning/load', {
       baseURL: "https://intra.epitech.eu",
       params: {
         format: 'json',
         start,
         end
+      },
+      headers: {
+        Cookie: `user=${request.params.autologin};`
       }
     });
     const registered: APIEvent[] = data.filter((e: APIEvent) => e.event_registered === "registered" || e.event_registered === "present");

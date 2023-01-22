@@ -3,7 +3,10 @@ import AutoLoad from 'fastify-autoload';
 import logger from './config/logger';
 import { join } from 'path';
 
-const app = fastify({ logger });
+const app = fastify({
+  logger,
+  maxParamLength: 200
+});
 
 // Routes
 app.register(AutoLoad, {
