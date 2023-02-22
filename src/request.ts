@@ -22,6 +22,9 @@ export async function request(request: FastifyRequest<Params>, reply: FastifyRep
       baseURL: "https://intra.epitech.eu",
       params: {
         format: 'json',
+        onlymypromo: true,
+        onlymyevent: true,
+        onlymymodule: true,
         start,
         end
       },
